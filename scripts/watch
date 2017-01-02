@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# This script will watch a directory, and execute an arbitrary
+# command when there is a change to a file within it.
+#
+# @param $1: The directory to watch for any changes
+# @param $2: The command to run when there is a change
+##################################################
+
+current_md5=""
+previous_md5=""
+
+traverse_directory() {
+    for file in $(ls $1); do
+        local file_path="$1/$file"
+        if [[ -f "$file_path" ]]; then
+            current_md5+=$(md5 "$file_path")
+        else
+            traverse_directory "$file_path"
+        fi
+    done
+}
+
+while true; do
+    traverse_directory "$1"
+    if [[ $previous_md5 != "" ]]; then
+        if [[ "$current_md5" != "$previous_md5" ]]; then
+            $2
+        fi
+    fi
+    previous_md5="$current_md5"
+    current_md5=""
+    sleep .5
+done
