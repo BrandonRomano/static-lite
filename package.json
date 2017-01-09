@@ -35,15 +35,17 @@
     "vue": "^2.1.8"
   },
   "scripts": {
-    "watch": "npm run compile && npm run serve & npm run watch:js & npm run watch:css & npm run watch:html",
-    "watch:js": "scripts/watch assets/js 'npm run compile:js'",
-    "watch:css": "scripts/watch assets/css 'npm run compile:css'",
-    "watch:html": "scripts/watch assets/html 'npm run compile:html'",
-    "compile": "npm run compile:js & npm run compile:css & npm run compile:html",
-    "compile:js": "npm run lint:js && mkdir -p public && browserify assets/js/index.js > /tmp/bundle.js && mv /tmp/bundle.js public/bundle.js",
-    "compile:css": "mkdir -p public && stylus assets/css/index.styl -o public/index.css",
-    "compile:html": "mkdir -p public && pug assets/html/pages/ --out public --hierarchy",
-    "lint:js": "standard assets/js/**/*.js --verbose | snazzy",
+    "watch": "npm run compile && npm run serve & npm run watch:js & npm run watch:css & npm run watch:html & npm run watch:assets",
+    "watch:js": "scripts/watch src/js 'npm run compile:js'",
+    "watch:css": "scripts/watch src/css 'npm run compile:css'",
+    "watch:html": "scripts/watch src/html 'npm run compile:html'",
+    "watch:assets": "scripts/watch src/assets 'npm run compile:assets'",
+    "compile": "npm run compile:js & npm run compile:css & npm run compile:html & npm run compile:assets",
+    "compile:js": "npm run lint:js && mkdir -p public && browserify src/js/index.js > /tmp/bundle.js && mv /tmp/bundle.js public/bundle.js",
+    "compile:css": "mkdir -p public && stylus src/css/index.styl -o public/index.css",
+    "compile:html": "mkdir -p public && pug src/html/pages/ --out public --hierarchy",
+    "compile:assets": "mkdir -p public && cp -R src/assets public/",
+    "lint:js": "standard src/js/**/*.js --verbose | snazzy",
     "serve": "browser-sync start --server --ss public --files public --xip"
   }
 }
