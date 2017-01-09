@@ -1,9 +1,7 @@
 {
   "name": "static-lite",
-  "version": "",
-  "description": "",
-  "repository": "",
-  "author": "",
+  "repository": "https://github.com/BrandonRomano/static-lite.git",
+  "author": "Brandon Romano",
   "browser": {
     "vue": "vue/dist/vue.common"
   },
