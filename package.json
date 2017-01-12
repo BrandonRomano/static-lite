@@ -38,7 +38,7 @@
     "watch:css": "scripts/watch src/css 'npm run compile:css'",
     "watch:html": "scripts/watch src/html 'npm run compile:html'",
     "watch:assets": "scripts/watch src/assets 'npm run compile:assets'",
-    "compile": "npm run compile:js & npm run compile:css & npm run compile:html & npm run compile:assets",
+    "compile": "npm run compile:js & npm run compile:css & npm run compile:html & npm run compile:assets & wait",
     "compile:js": "npm run lint:js && mkdir -p public && browserify src/js/index.js > /tmp/bundle.js && mv /tmp/bundle.js public/bundle.js",
     "compile:css": "mkdir -p public && stylus src/css/index.styl -o public/index.css",
     "compile:html": "mkdir -p public && pug src/html/pages/ --out public -O \"$(scripts/data_cache)\" --hierarchy",
