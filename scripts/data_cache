@@ -1,11 +1,11 @@
 #!/bin/bash
 
 script_dir="$(echo "$0" | sed "s/$(basename "$0")//g")"
-cache_file="$script_dir../.compile_data_cache"
+cache_file="$script_dir../.data"
 
 # If we don't have a cache yet, load it!
 if [[ ! -f "$cache_file" ]]; then
-  ${script_dir}compile_data >> $cache_file
+  "${script_dir}../src/data" >> "$cache_file"
 fi
 
 # Output the result
