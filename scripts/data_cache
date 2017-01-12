@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# This script will fetch the data as defined by the
+# ../src/data file (if it has not already been cached).
+# The contents of the cache will then be output.
+##################################################
+
+script_dir=$(dirname "$0")
+cache_file="$script_dir/../.data"
+
+# If we don't have a cache yet, load it!
+if [[ ! -f "$cache_file" ]]; then
+  "${script_dir}/../src/data" >> "$cache_file"
+fi
+
+# Output the result
+cat "$cache_file"

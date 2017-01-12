@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+var https = require("https")
+
+var options = {
+  method: 'GET',
+  host: 'api.github.com',
+  path: '/repos/BrandonRomano/static-lite/contributors',
+  headers: {'user-agent': 'BrandonRomano/static-lite'}
+};
+
+var request = https.request(options, function(response){
+  var body = ''
+  response.on("data", function(chunk){
+    body += chunk.toString('utf8')
+  });
+  response.on("end", function(){
+    var result = {
+      contributors: JSON.parse(body)
+    }
+    console.log(result)
+  });
+});
+request.end();

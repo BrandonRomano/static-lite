@@ -2,12 +2,20 @@
 extends ../layout.pug
 
 block content
-  h1 Static Lite
-
-  p Really just a few npm scripts... #[a(href="/wow") Check this page out]
+  section#info
+    h1 Static Lite
+    p Really just a few npm scripts... #[a(href="/wow") Check this page out]
 
   hr
-
-  #app
+  section#app
     h1 Vue JS
     p {{ message }}
+
+  hr
+  section#contributors
+    h1 Contributors
+    ul
+      each contributor in contributors
+        li
+          a(href=contributor.html_url)
+            img(src=contributor.avatar_url + "&size=80")
