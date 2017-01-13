@@ -24,3 +24,41 @@ cd static-lite
 npm i
 npm run watch
 ```
+
+## NPM Script Usage
+
+Here is the usage of the NPM scripts, assuming you haven't changed them.
+
+> There are additional lower-level npm scripts that I won't describe here.  You will have to dig into the [NPM Scripts]((https://github.com/BrandonRomano/static-lite/blob/master/package.json#L36-L48) to understand their usage.
+
+### watch
+
+To compile, start a server, and watch your files for changes, run the following command:
+
+```sh
+npm run watch
+```
+
+### compile
+
+To compile your code in `src` to browser friendly html/css/js, run the following command:
+
+```sh
+npm run compile
+```
+
+### serve
+
+To start a local server displaying the compiled public directory, run the following command:
+
+```sh
+npm run serve
+```
+
+### cache:clear
+
+To clear the cache that stores the stdout of the `src/data` file, run the following command:
+
+```sh
+npm run cache:clear
+```
