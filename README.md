@@ -29,7 +29,7 @@ npm run watch
 
 Here is the usage of the NPM scripts, assuming you haven't changed them.
 
-> There are additional lower-level npm scripts that I won't describe here.  You will have to dig into the [NPM Scripts]((https://github.com/BrandonRomano/static-lite/blob/master/package.json#L36-L48) to understand their usage.
+> There are additional lower-level npm scripts that I won't describe here.  You will have to dig into the [NPM Scripts](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L36-L48) to understand their usage.
 
 ### watch
 
