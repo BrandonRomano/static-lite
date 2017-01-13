@@ -62,3 +62,11 @@ To clear the cache that stores the stdout of the `src/data` file, run the follow
 ```sh
 npm run cache:clear
 ```
+
+You might want to combine this with watch, so you clear the cache every time you restart the watcher:
+
+```
+npm run cache:clear && npm run watch
+```
+
+> If this is a common use case for you, you might want to add a new NPM Script that does exactly the above.
