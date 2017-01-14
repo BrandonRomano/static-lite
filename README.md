@@ -4,13 +4,10 @@ Static Lite is a template for generating static sites, powered entirely by NPM s
 
 ## Getting Started
 
-Run the following, and watch the magic happen:
+Clone down this repo, then run the following inside of it:
 
 ```
-git clone https://github.com/BrandonRomano/static-lite.git
-cd static-lite
-npm i
-npm run watch
+npm i && npm run watch
 ```
 
 ## NPM Script Usage
