@@ -1,10 +1,10 @@
 # Static Lite
 
-Static Lite is a template for generating static sites, powered entirely by NPM scripts.
+Static Lite is a minimalist configuration for generating static sites, powered entirely by NPM scripts.
 
 ## Getting Started
 
-Clone down this repo, then run the following inside of it:
+Clone down this repo, then run the following inside:
 
 ```
 npm i && npm run watch
