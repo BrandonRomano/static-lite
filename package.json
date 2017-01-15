@@ -13,22 +13,14 @@
   "browserify": {
     "transform": [
       [
-        "babelify",
-        {
-          "presets": [
-            "es2015",
-            "stage-2"
-          ]
-        }
+        "coffeeify"
       ]
     ]
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-stage-2": "^6.5.0",
-    "babelify": "^7.3.0",
     "browser-sync": "^2.18.5",
     "browserify": "^13.1.1",
+    "coffeeify": "^2.1.0",
     "pug-cli": "^1.0.0-alpha6",
     "snazzy": "^5.0.0",
     "standard": "^8.4.0",
@@ -44,7 +36,7 @@
     "watch:html": "scripts/watch src/html 'npm run compile:html'",
     "watch:assets": "scripts/watch src/assets 'npm run compile:assets'",
     "compile": "npm run compile:js & npm run compile:css & npm run compile:html & npm run compile:assets & wait",
-    "compile:js": "npm run lint:js && mkdir -p public && browserify src/js/index.js > /tmp/bundle.js && mv /tmp/bundle.js public/bundle.js",
+    "compile:js": "npm run lint:js && mkdir -p public && browserify src/js/index.coffee > /tmp/bundle.js && mv /tmp/bundle.js public/bundle.js",
     "compile:css": "mkdir -p public && stylus src/css/index.styl -o public/index.css",
     "compile:html": "npm run compile:html:pages && npm run compile:html:templates",
     "compile:html:pages": "mkdir -p public && pug src/html/pages/ --out public -O \"$(scripts/data_cache)\" --hierarchy",
