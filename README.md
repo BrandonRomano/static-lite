@@ -81,7 +81,7 @@ The `src` directory is the directory that files are pulled from to generate your
 
 The `src/data` file in which you can prepare data to pass to our HTML compiler.
 
-If you note, this file has no extension.  This is intentional, as there is no need mandate this file be written in any specific language.  My example uses Node to prepare the data, and I use a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) to denote my interpreter.
+If you note, this file has no extension.  This is intentional, as there is no need mandate this file be written in any specific language.  My example uses Node to prepare the data, and I use a [shebang](https://github.com/BrandonRomano/static-lite/blob/master/src/data#L1) to denote my interpreter.
 
 You _must_ output your final JSON Object to stdout.
 
