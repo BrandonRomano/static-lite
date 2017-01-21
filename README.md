@@ -2,9 +2,13 @@
 
 Static Lite is a minimalist configuration for generating static sites, powered entirely by NPM scripts.
 
+## Quick Setup
+
+Hit this fancy button to duplicate this repo and to get it hosted on [Netlify](https://www.netlify.com) in seconds:
+
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/BrandonRomano/static-lite)
 
-## Getting Started
+## Running Locally
 
 Clone down this repo, then run the following inside:
 
