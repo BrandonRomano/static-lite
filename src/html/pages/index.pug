@@ -4,18 +4,7 @@ extends ../layout.pug
 block content
   section#info
     h1 Static Lite
-    p Really just a few npm scripts... #[a(href="/wow") Check this page out]
-
-  hr
-  section#app
-    h1 Vue JS
-    p {{ message }}
-
-  hr
-  section#contributors
-    h1 Contributors
+    h2 Blog
     ul
-      each contributor in contributors
-        li
-          a(href=contributor.html_url)
-            img(src=contributor.avatar_url + "&size=80")
+      each post in data
+        li: a(href='/posts/' + post.title.toLowerCase().replace(' ', '-') + '.html')= post.title
