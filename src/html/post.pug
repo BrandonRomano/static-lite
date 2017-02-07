@@ -1,0 +1,12 @@
+//- post.pug
+extends ./layout.pug
+
+block title
+  title #{title}
+
+block content
+  article
+    h1#title #{title}
+    date #{date}
+    #content
+      p #{content}

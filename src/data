@@ -1,23 +1,15 @@
 #!/usr/bin/env node
-var https = require("https")
 
-var options = {
-  method: 'GET',
-  host: 'api.github.com',
-  path: '/repos/BrandonRomano/static-lite/contributors',
-  headers: {'user-agent': 'BrandonRomano/static-lite'}
-};
+// fetch JSON data
+const data = { "data": [ {
+    "title": "Post 1",
+    "date": "Jan 1, 2017",
+    "content": "OMG did it's so lite, it's like being on a diet!"
+  }, {
+    "title": "Post 2",
+    "date": "Jan 2, 2017",
+    "content": "This can be whatever you want."
+  }
+]};
 
-var request = https.request(options, function(response){
-  var body = ''
-  response.on("data", function(chunk){
-    body += chunk.toString('utf8')
-  });
-  response.on("end", function(){
-    var result = {
-      contributors: JSON.parse(body)
-    }
-    console.log(result)
-  });
-});
-request.end();
+console.log(JSON.stringify(data));

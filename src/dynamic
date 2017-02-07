@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+var pug = require('pug');
+var fs = require('fs');
+
+var tpl = process.argv[2];
+var data = process.argv[3];
+
+console.log(data.data)
+for (var post in data.data) {
+  console.log(data.data[post]);
+  fs.writeFileSync(`public/posts/${data.data[post].title.toLowerCase().replace(' ', '-')}.html`, pug.renderFile(tpl, post));
+};
