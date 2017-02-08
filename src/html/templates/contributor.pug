@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block title
+  title #{login}
+
+block content
+  #user
+    a(href=html_url)
+      img(src=avatar_url + "&size=200")
+
+    h1 #{login}
+
+    p
+      strong Contributions:
+      | #{contributions}
+
+    a(href=html_url)
+      p View on Github
+
+  a(href="/")
+    p Take me home

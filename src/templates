@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+var pug = require('pug');
+var fs = require('fs');
+var data = JSON.parse(process.argv[2]);
+
+/**
+ * Creates all of our individual contributor pages
+ */
+function compileContributors(contributors) {
+  // Make dir in public
+  var dir = 'public/contributors'
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir);
+
+  // Create each contributor page
+  for (var contributor of contributors) {
+    fs.writeFileSync(
+      `${dir}/${contributor.login}.html`,
+      pug.renderFile('src/html/templates/contributor.pug', contributor)
+    );
+  }
+}
+
+// Start
+compileContributors(data.contributors);
