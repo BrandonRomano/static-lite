@@ -2,12 +2,24 @@
 
 var pug = require('pug');
 var fs = require('fs');
+var readline = require('readline');
 
+var data;
 var tpl = process.argv[2];
-var data = process.argv[3];
+var rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+});
 
-console.log(data.data)
-for (var post in data.data) {
-  console.log(data.data[post]);
-  fs.writeFileSync(`public/posts/${data.data[post].title.toLowerCase().replace(' ', '-')}.html`, pug.renderFile(tpl, post));
-};
+rl.on('line', (input) => {
+  data = input
+});
+
+rl.on('close', () => {
+  data = JSON.parse(data)
+  for (var post in data.data) {
+    post = data.data[post]
+    fs.writeFileSync(`public/posts/${post.title.toLowerCase().replace(' ', '-')}.html`, pug.renderFile(tpl, post));
+  };
+});
