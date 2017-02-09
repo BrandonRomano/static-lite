@@ -22,7 +22,7 @@ npm i && npm run watch
 
 Here is the usage of the NPM scripts, assuming you haven't changed them.
 
-> There are additional lower-level npm scripts that I won't describe here.  You will have to dig into the [NPM Scripts](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L36-L50) to understand their usage.
+> There are additional lower-level npm scripts that I won't describe here.  You will have to dig into the [NPM Scripts](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L41-L55) to understand their usage.
 
 ### watch
 
@@ -98,21 +98,19 @@ You _must_ output your final JSON Object to stdout.
 
 The `sec/templates` file is the place where you generate any custom pages that aren't explicitly declared in the `src/html/pages` structure.
 
-If you note, this file has no extension.  This is intentional, as there is no need mandate this file be written in any specific language.  My example uses Node to prepare the data, and I use a [shebang](https://github.com/BrandonRomano/static-lite/blob/master/src/templates#L1) to denote my interpreter.
-
-This file is [passed the data](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L46) that was output by the `data` file.
+This file is [passed the data](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L51) that was output by the `data` file.
 
 ### src/assets
 
 The `src/assets` directory is the place where you would want to put your assets (think .jpg, .svg, etc).
 
-You can maintain any subfolder organization in this folder, as assets are [simply copied](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L47) into the `public/assets` directory when compiled.
+You can maintain any subfolder organization in this folder, as assets are [simply copied](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L52) into the `public/assets` directory when compiled.
 
 ### src/css
 
 The `src/css` directory is the place where we are going to store our stylus files.
 
-There must be an `index.styl` file present in this directory, as we are [specifically compiling that file](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L43).  To have multiple stylus files, you must take advantage of Stylus's [@import or @require](http://stylus-lang.com/docs/import.html) feature.
+There must be an `index.styl` file present in this directory, as we are [specifically compiling that file](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L48).  To have multiple stylus files, you must take advantage of Stylus's [@import or @require](http://stylus-lang.com/docs/import.html) feature.
 
 The `src/css/index.styl` file is compiled down to `public/index.css`.
 
@@ -120,15 +118,15 @@ The `src/css/index.styl` file is compiled down to `public/index.css`.
 
 The `src/html` directory is the place where we will store our Pug files.
 
-There must be a `pages` directory present inside of this directory, as we are [compiling the src/html/pages directory](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L45).  We are specifically compiling the `pages` directory, so you are safe to use templates / utility files outside of the `pages` directory.
+There must be a `pages` directory present inside of this directory, as we are [compiling the src/html/pages directory](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L50).  We are specifically compiling the `pages` directory, so you are safe to use templates / utility files outside of the `pages` directory.
 
 The `src/html/pages/` directory is compiled directly into the `public/` directory.  You must be mindful of this fact when referencing assets in your HTML, as there is no magic that goes and updates your local references during the compile process.
 
 ### src/js
 
-The `src/js` directory is the place where we will store our Javascript ([es2015, stage-2](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L13-L16)) files.
+The `src/js` directory is the place where we will store our Javascript ([es2015, stage-2](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L18-L21)) files.
 
-There must be an `index.js` file present in this directory, as we are [specifically compiling that file](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L42).  To have multiple Javascript files, you must take advantage of Javascripts `require` or `import`.
+There must be an `index.js` file present in this directory, as we are [specifically compiling that file](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L47).  To have multiple Javascript files, you must take advantage of Javascripts `require` or `import`.
 
 ## License
 
