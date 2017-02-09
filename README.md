@@ -22,7 +22,7 @@ npm i && npm run watch
 
 Here is the usage of the NPM scripts, assuming you haven't changed them.
 
-> There are additional lower-level npm scripts that I won't describe here.  You will have to dig into the [NPM Scripts](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L36-L48) to understand their usage.
+> There are additional lower-level npm scripts that I won't describe here.  You will have to dig into the [NPM Scripts](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L36-L50) to understand their usage.
 
 ### watch
 
@@ -79,25 +79,34 @@ src/
 ├── html
 │   └── pages
 │       └── index.pug
-└── js
-    └── index.js
+├── js
+│   └── index.js
+└── templates
 ```
 
 The `src` directory is the directory that files are pulled from to generate your static site in the `public` directory.
 
 ### src/data
 
-The `src/data` file in which you can prepare data to pass to our HTML compiler.
+The `src/data` file is the place where you prepare data to pass to our HTML compiler and [templates](#sectemplates) script.
 
 If you note, this file has no extension.  This is intentional, as there is no need mandate this file be written in any specific language.  My example uses Node to prepare the data, and I use a [shebang](https://github.com/BrandonRomano/static-lite/blob/master/src/data#L1) to denote my interpreter.
 
 You _must_ output your final JSON Object to stdout.
 
+### sec/templates
+
+The `sec/templates` file is the place where you generate any custom pages that aren't explicitly declared in the `src/html/pages` structure.
+
+If you note, this file has no extension.  This is intentional, as there is no need mandate this file be written in any specific language.  My example uses Node to prepare the data, and I use a [shebang](https://github.com/BrandonRomano/static-lite/blob/master/src/templates#L1) to denote my interpreter.
+
+This file is [passed the data](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L46) that was output by the `data` file.
+
 ### src/assets
 
 The `src/assets` directory is the place where you would want to put your assets (think .jpg, .svg, etc).
 
-You can maintain any subfolder organization in this folder, as assets are [simply copied](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L45) into the `public/assets` directory when compiled.
+You can maintain any subfolder organization in this folder, as assets are [simply copied](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L47) into the `public/assets` directory when compiled.
 
 ### src/css
 
@@ -111,7 +120,7 @@ The `src/css/index.styl` file is compiled down to `public/index.css`.
 
 The `src/html` directory is the place where we will store our Pug files.
 
-There must be a `pages` directory present inside of this directory, as we are [compiling the src/html/pages directory](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L44).  We are specifically compiling the `pages` directory, so you are safe to use templates / utility files outside of the `pages` directory.
+There must be a `pages` directory present inside of this directory, as we are [compiling the src/html/pages directory](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L45).  We are specifically compiling the `pages` directory, so you are safe to use templates / utility files outside of the `pages` directory.
 
 The `src/html/pages/` directory is compiled directly into the `public/` directory.  You must be mindful of this fact when referencing assets in your HTML, as there is no magic that goes and updates your local references during the compile process.
 
