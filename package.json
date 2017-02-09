@@ -2,6 +2,11 @@
   "name": "static-lite",
   "repository": "https://github.com/BrandonRomano/static-lite.git",
   "author": "Brandon Romano",
+  "contributors": {
+    "name": "Henry Snopek",
+    "email": "hhsnopek@gmail.com",
+    "url": "hhsnopek.com"
+  },
   "browser": {
     "vue": "vue/dist/vue.common"
   },
