@@ -1,7 +1,31 @@
 #!/usr/bin/env node
 var pug = require('pug');
 var fs = require('fs');
-var data = JSON.parse(process.argv[2]);
+var readline = require('readline');
+
+/**
+ * Reads the data passed in from stdin, wraps it up into
+ * an object and calls compile
+ */
+function readStdin() {
+  var data = '';
+  readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    terminal: false
+  }).on('line', (input) => {
+    data += input;
+  }).on('close', () => {
+    compile(JSON.parse(data));
+  });
+}
+
+/**
+ * Responsible for compiling all custom pages
+ */
+function compile(data) {
+  compileContributors(data.contributors);
+}
 
 /**
  * Creates all of our individual contributor pages
@@ -21,4 +45,4 @@ function compileContributors(contributors) {
 }
 
 // Start
-compileContributors(data.contributors);
+readStdin()

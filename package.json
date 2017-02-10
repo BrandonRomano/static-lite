@@ -48,7 +48,7 @@
     "compile:css": "mkdir -p public && stylus src/css/index.styl -o public/index.css",
     "compile:html": "npm run compile:html:pages && npm run compile:html:templates",
     "compile:html:pages": "mkdir -p public && pug src/html/pages/ --out public -O \"$(scripts/data_cache)\" --hierarchy",
-    "compile:html:templates": "src/templates \"$(scripts/data_cache)\"",
+    "compile:html:templates": "scripts/data_cache | src/templates",
     "compile:assets": "mkdir -p public && cp -R src/assets public/",
     "cache:clear": "if [[ -f .data ]]; then rm .data; fi",
     "lint:js": "standard src/js/**/*.js --verbose | snazzy",
