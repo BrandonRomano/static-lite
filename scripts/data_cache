@@ -1,8 +1,11 @@
 #!/bin/bash
 #
 # This script will fetch the data as defined by the
-# ../src/data file (if it has not already been cached).
-# The contents of the cache will then be output.
+# ../src/data file and write it to our cache file
+# if it has not already been cached.
+#
+# This command will then output the location of
+# the cache file
 ##################################################
 
 script_dir=$(dirname "$0")
@@ -14,4 +17,4 @@ if [[ ! -f "$cache_file" ]]; then
 fi
 
 # Output the result
-cat "$cache_file"
+echo "$cache_file"
