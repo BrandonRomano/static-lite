@@ -128,6 +128,27 @@ The `src/js` directory is the place where we will store our Javascript ([es2015,
 
 There must be an `index.js` file present in this directory, as we are [specifically compiling that file](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L47).  To have multiple Javascript files, you must take advantage of Javascripts `require` or `import`.
 
+## Recipes
+
+Static Lite is built around the idea of flexibility.  I understand that everyone won't agree with the build tools decided on in the master branch, so here is some popular tools that I've already integrated into Static Lite for you.
+
+You can [cherry-pick](https://git-scm.com/docs/git-cherry-pick) the commits of the tools you want to use yourself!
+
+If your tool of choice isn't here, give a shot plugging it in yourself!  If you're struggling to set it up yourself, file an issue and we can try to help.
+
+### Javascript Compilers
+
+- es2015 stage-2 (master branch)
+- [Coffeescript](https://github.com/BrandonRomano/static-lite/compare/coffeescript)
+
+### HTML Templating Languages
+
+- Pug (master branch)
+
+### CSS Preprocessors
+
+- Stylus (master branch)
+
 ## License
 
 [MIT](./LICENSE.md)
