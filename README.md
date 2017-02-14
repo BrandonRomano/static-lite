@@ -2,7 +2,7 @@
 
 Static Lite is a minimalist configuration for generating static sites, powered entirely by NPM scripts.
 
-> Why?  Check out [this Medium post](https://engineering.carrot.is/a-minimalist-approach-to-static-site-generation-a4e10d1d1b2c#.stb7mbpee).
+> Why?  Check out our [project objectives](./project_objectives.md).
 
 ## Quick Setup
 
