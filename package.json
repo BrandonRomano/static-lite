@@ -49,7 +49,7 @@
     "compile:html": "npm run compile:html:pages && npm run compile:html:templates",
     "compile:html:pages": "mkdir -p public && pug src/html/pages/ --out public -O \"$(scripts/data_cache)\" --hierarchy",
     "compile:html:templates": "mkdir -p public && cat \"$(scripts/data_cache)\" | src/templates",
-    "compile:assets": "mkdir -p public && cp -R src/assets public/",
+    "compile:assets": "mkdir -p public && cp -R src/assets/ public/",
     "cache:clear": "if [[ -f .data ]]; then rm .data; fi",
     "lint:js": "standard src/js/**/*.js --verbose | snazzy",
     "serve": "browser-sync start --server --ss public --files public --xip"
