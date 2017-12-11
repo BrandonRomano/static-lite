@@ -1,4 +1,4 @@
-import 'fetch'
+import 'whatwg-fetch'
 import Vue from 'vue'
 
 var app = new Vue({
