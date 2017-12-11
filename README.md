@@ -124,7 +124,7 @@ The `src/html/pages/` directory is compiled directly into the `public/` director
 
 ### src/js
 
-The `src/js` directory is the place where we will store our Javascript ([es2015, stage-2](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L18-L21)) files.
+The `src/js` directory is the place where we will store our Javascript ([@babel/preset-env](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L19)) files.
 
 There must be an `index.js` file present in this directory, as we are [specifically compiling that file](https://github.com/BrandonRomano/static-lite/blob/master/package.json#L47).  To have multiple Javascript files, you must take advantage of Javascripts `require` or `import`.
 
@@ -138,7 +138,7 @@ If your tool of choice isn't here, give a shot plugging it in yourself!  If you'
 
 ### Javascript Compilers
 
-- es2015 stage-2 (master branch)
+- @babel/preset-env (master branch)
 - [Coffeescript](https://github.com/BrandonRomano/static-lite/compare/coffeescript)
 
 ### HTML Templating Languages
